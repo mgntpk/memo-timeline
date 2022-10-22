@@ -1,0 +1,18 @@
+.container{
+    border: solid black 0.1px;
+    border-color: black;
+    display: flex;
+}
+.memoContainer{
+
+}
+.content{
+    font-size: 3rem;
+}
+.date{
+    font-size: 0.8rem;
+}
+.deleteOne{
+    width: 1rem;
+    margin-left: auto;
+}
