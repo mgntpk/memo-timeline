@@ -3,7 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import MemoTimeline from "../components/memoTimeline"
 import MemoInput from "../components/memoInput"
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 const Home: NextPage = () => {
 	const [memos,setMemos] = useState<any[]>([]);
 	useEffect(() => {
@@ -12,6 +12,7 @@ const Home: NextPage = () => {
 			setMemos([localStorageMemo]);
 		}
 	}, []);
+	const addMemo = useCallback((object:{ id: number; content: string; date: string; }) =>setMemos((property) => [object,...property]),[setMemos]);
 	
 	return (
 		<>
@@ -20,7 +21,7 @@ const Home: NextPage = () => {
 				<meta name="" content="" />
 			</Head>
 			<h1>memo-timeline</h1>
-			<MemoInput/>
+			<MemoInput addMemo = {addMemo}/>
 			<MemoTimeline memos = {memos}/>
 		</>
 	)

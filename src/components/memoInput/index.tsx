@@ -4,7 +4,7 @@ import getDateStr from "./getDateStr";
 import MemoTimeline from "../memoTimeline";
 import Home from "../../pages";
 
-const MemoInput = () => {
+const MemoInput = (props) => {
     const textareaRef = React.useRef(null);
     
     const saveMemo = useCallback(() => {
@@ -17,17 +17,15 @@ const MemoInput = () => {
             }
             localStorage.memo = JSON.stringify(object);
             console.log("true");
-            
-            
-
+            props.addMemo(object);
         }
-    },[]);
+    },[textareaRef.current,props.addMemo]);
 
     return (
         <>
             <div>
                 <textarea ref={textareaRef}></textarea>
-                <button onClick={saveMemo}></button>
+                <button onClick={saveMemo}>保存</button>
             </div>
         </>
     )
