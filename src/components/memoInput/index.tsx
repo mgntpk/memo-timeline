@@ -4,11 +4,11 @@ import getDateStr from "./getDateStr";
 import MemoTimeline from "../memoTimeline";
 import Home from "../../pages";
 
-const MemoInput = (props) => {
-    const textareaRef = React.useRef(null);
+const MemoInput = (props: { addMemo: Function }) => {
+    const textareaRef = React.useRef<HTMLTextAreaElement>(null);
     
     const saveMemo = useCallback(() => {
-        if (textareaRef.current.value) {
+        if (textareaRef.current?.value) {
             const date : Date = new Date;
             const object : { id: number; content: string; date: string; }= {
                 id : date.getTime(),
