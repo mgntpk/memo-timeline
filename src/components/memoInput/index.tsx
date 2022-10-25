@@ -1,11 +1,9 @@
-import React,{useCallback, useRef} from "react";
+import {useCallback, useRef} from "react";
 import styles from "./.module.css";
 import getDateStr from "./getDateStr";
-import MemoTimeline from "../memoTimeline";
-import Home from "../../pages";
 
 const MemoInput = (props: { addMemo: Function }) => {
-    const textareaRef = React.useRef<HTMLTextAreaElement>(null);
+    const textareaRef = useRef<HTMLTextAreaElement>(null);
     
     const saveMemo = useCallback(() => {
         if (textareaRef.current?.value) {
