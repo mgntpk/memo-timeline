@@ -5,14 +5,21 @@ import MemoTimeline from "../components/memoTimeline"
 import MemoInput from "../components/memoInput"
 import { useCallback, useEffect, useState } from 'react'
 const Home: NextPage = () => {
-	const [memos,setMemos] = useState<Array<{ id: number; content: string; date: string; }>>([]);
+	const [memos,setMemos] = useState<Array<{ id: number; content: string; date: string; }>>(([]));
 	useEffect(() => {
 		if(localStorage.memo){
-			const localStorageMemo : Array<{ id: number; content: string; date: string; }>= [JSON.parse(localStorage.memo)];
+			const localStorageMemo : Array<{ id: number; content: string; date: string; }>= JSON.parse(localStorage.memo);
 			setMemos(localStorageMemo);
 		}
 	}, []);
-	const addMemo = useCallback((object:{ id: number; content: string; date: string; }) =>setMemos((property) => [object,...property]),[setMemos]);
+	const addMemo = useCallback((object:{ id: number; content: string; date: string; }) =>{
+		setMemos((property) => [object,...property]);
+		let array = [object]
+		memos.map((data: { id: number; content: string; date: string; }) => (
+			array.push(data)
+		));
+		localStorage.memo = JSON.stringify(array);
+	},[memos]);
 	
 	return (
 		<>

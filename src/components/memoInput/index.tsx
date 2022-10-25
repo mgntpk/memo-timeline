@@ -15,11 +15,10 @@ const MemoInput = (props: { addMemo: Function }) => {
                 content : textareaRef.current.value,
                 date : getDateStr(date)
             }
-            localStorage.memo = JSON.stringify(object);
             console.log("true");
             props.addMemo(object);
         }
-    },[textareaRef.current,props.addMemo]);
+    },[props]);
 
     return (
         <>
