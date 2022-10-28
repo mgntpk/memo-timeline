@@ -21,9 +21,11 @@ const Home: NextPage = () => {
 				<title>memo-timeline</title>
 				<meta name="" content="" />
 			</Head>
-			<h1>memo-timeline</h1>
-			<MemoInput addMemo = {addMemo}/>
-			<MemoTimeline memoArray = {memoArray}/>
+			<h1 className={styles.h1}>memo-timeline</h1>
+			<div className={styles.div}>
+				<MemoInput addMemo = {addMemo}/>
+				<MemoTimeline memoArray = {memoArray}/>
+			</div>
 		</>
 	)
 }

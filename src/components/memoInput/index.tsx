@@ -20,9 +20,9 @@ const MemoInput = (props: { addMemo: Function }) => {
 
     return (
         <>
-            <div>
-                <textarea ref={textareaRef}></textarea>
-                <button onClick={saveMemo}>保存</button>
+            <div className={styles.div}>
+                <textarea ref={textareaRef} className={styles.textarea}></textarea>
+                <button onClick={saveMemo} className={styles.button}>保存</button>
             </div>
         </>
     )

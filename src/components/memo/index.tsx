@@ -1,6 +1,6 @@
 import styles from './.module.css'
 
-const memo = (props : { content: string ; date: string ; key : number }) =>  {
+const memo = (props : { content : string ; date : string ; key : number }) =>  {
     return (
         <div className={styles.container}>
             <div className={styles.memoContainer}>

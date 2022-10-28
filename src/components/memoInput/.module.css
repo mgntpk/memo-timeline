@@ -1,0 +1,17 @@
+.div{
+   width: calc(100% - 16px);
+   display: flexbox;
+   margin: 0 auto;
+}
+.textarea{
+    resize: none;
+    width: 100%;
+    height: 8.5rem;
+    font-size: 1.8rem;
+}
+.button{
+    width: 32%;
+    margin-left: 68%;
+    font-size: 1.4rem;
+
+}
