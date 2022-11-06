@@ -8,7 +8,7 @@ const memoTimeline = (props: { memoArray: Array<{ id: number; content: string; d
             date = {data.date}
         />
     ));
-    return <div className = "timeline">{memoList}</div>
+    return <div className = {styles.timeline}>{memoList}</div>
 }
 
 export default memoTimeline
