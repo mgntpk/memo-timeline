@@ -1,6 +1,6 @@
-import styles from './.module.css'
+import styles from "./.module.css";
 
-const memo = (props : { content : string ; date : string ; key : number }) =>  {
+const memo = (props: { content: string; date: string; key: number }) => {
     return (
         <div className={styles.container}>
             <div className={styles.memoContainer}>
@@ -8,7 +8,7 @@ const memo = (props : { content : string ; date : string ; key : number }) =>  {
                 <div className={styles.date}>{props.date}</div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default memo
+export default memo;

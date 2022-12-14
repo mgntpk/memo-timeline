@@ -1,22 +1,19 @@
-.container{
+.container {
     margin-bottom: 0.5rem;
     border-top: solid #e2e2e2 1.2px;
-    
 }
 .memoContainer,
-.content{
+.content {
     width: calc(100% - 16px);
     word-break: break-all;
 }
-.memoContainer{
+.memoContainer {
     margin: 0 auto;
-
 }
-.content{
+.content {
     font-size: 1.8rem;
     white-space: pre-wrap;
-   
 }
-.date{
+.date {
     font-size: 0.8rem;
 }
