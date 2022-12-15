@@ -5,7 +5,6 @@ import Header from "../components/header";
 import MemoTimeline from "../components/memoTimeline";
 import MemoInput from "../components/memoInput";
 import { useCallback, useEffect, useState } from "react";
-import { title } from "node:process";
 const Home: NextPage = () => {
     const [memoArray, setMemoArray] = useState<
         Array<{ id: number; content: string; date: string }>
