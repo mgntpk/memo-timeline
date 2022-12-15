@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import Header from "../components/header";
 import MemoTimeline from "../components/memoTimeline";
 import MemoInput from "../components/memoInput";
 import { useCallback, useEffect, useState } from "react";
@@ -27,7 +28,7 @@ const Home: NextPage = () => {
                 <title>memo-timeline</title>
                 <meta name="" content="" />
             </Head>
-            <h1 className={styles.h1}>memo-timeline</h1>
+            <Header></Header>
             <div className={styles.div}>
                 <MemoInput addMemo={addMemo} />
                 <MemoTimeline memoArray={memoArray} />
