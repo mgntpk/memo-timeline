@@ -27,7 +27,7 @@ const Home: NextPage = () => {
                 <title>memo-timeline</title>
                 <meta name="" content="" />
             </Head>
-            <Header></Header>
+            <Header />
             <div className={styles.div}>
                 <MemoInput addMemo={addMemo} />
                 <MemoTimeline memoArray={memoArray} />
