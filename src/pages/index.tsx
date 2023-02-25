@@ -5,18 +5,27 @@ import Header from "../components/header";
 import MemoTimeline from "../components/memoTimeline";
 import MemoInput from "../components/memoInput";
 import { useCallback, useEffect, useState } from "react";
+
+type Memo = {
+    id: number;
+    content: string;
+    date: string;
+};
+
 const Home: NextPage = () => {
-    const [memoArray, setMemoArray] = useState<
-        Array<{ id: number; content: string; date: string }>
-    >([]);
+    const [memoArray, setMemoArray] = useState<Memo[]>([]);
+
     useEffect(() => {
-        if (localStorage.memo) setMemoArray(JSON.parse(localStorage.memo));
+        const memo = localStorage.getItem("memo");
+        if (memo) {
+            setMemoArray(JSON.parse(memo));
+        }
     }, []);
+
     const addMemo = useCallback(
-        (object: { id: number; content: string; date: string }) => {
-            const memoArray_ = [object, ...memoArray];
-            setMemoArray(memoArray_);
-            localStorage.memo = JSON.stringify(memoArray_);
+        (memo: Memo) => {
+            setMemoArray([memo, ...memoArray]);
+            localStorage.setItem("memo", JSON.stringify([memo, ...memoArray]));
         },
         [memoArray]
     );
